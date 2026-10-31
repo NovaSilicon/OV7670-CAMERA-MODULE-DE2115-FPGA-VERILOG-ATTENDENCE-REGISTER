@@ -8,7 +8,7 @@ Open `top_ov7670_vga_detect.qpf` in Quartus Prime Lite 18.1 (target EP4CE115F29C
 
 | Request | Now |
 |---|---|
-| Third person | **SAHITI, 26MVD0036** is ID 2, with her own enrol key (KEY[3]) and her own attendance row. |
+| Third person | **NAME3, REGNO.** is ID 2, with her own enrol key (KEY[3]) and her own attendance row. |
 | Enrol once, keep forever | Enrolled faces are saved in the **on-board 32 Kbit EEPROM** and loaded automatically at every power-up or reprogramming. Switching off the board or loading a new `.sof` no longer forgets anyone. |
 | Never lose a person by accident | Enrol keys only work while **SW[17] is up**. With SW[17] down (the normal state) no key can change or erase anything. A short tap that captured nothing changes nothing. |
 | Name on the box, PRESENT held 1–2 s | Green box, `<NAME>` / `PRESENT <reg no>`, then back to `DETECTING`. Second time for the same person: orange box, `ALREADY MARKED`. |
@@ -20,7 +20,7 @@ Why it forgot before: the templates lived only in the FPGA's RAM. Anything that 
 | Control | Function |
 |---|---|
 | SW[17] | **Enrol enable.** Up only while enrolling; down otherwise. |
-| KEY[1] / KEY[2] / KEY[3] (hold, with SW[17] up) | Enrol **ADVAITH** / **NAVANEETH** / **SAHITI**. |
+| KEY[1] / KEY[2] / KEY[3] (hold, with SW[17] up) | Enrol **NAME1** / **NAME2** / **NAME3**. |
 | KEY[0] | Re-send camera configuration (unchanged). |
 | SW[3] | Up = reset attendance and tracker (stored faces are kept). Put it back down. |
 | SW[15:12] | Match threshold = `0x1000 + 0x200 x value` (all down = 0x1000). Up = more permissive. |
