@@ -43,9 +43,9 @@ module attendance_display #(
     reg [159:0] message;
     always @* begin
         case (dy[5:4])
-            2'd0:    message = shown_flags[0] ? "ADVAITH   PRESENT   " : "ADVAITH   NOT MARKED";
-            2'd1:    message = shown_flags[1] ? "NAVANEETH PRESENT   " : "NAVANEETH NOT MARKED";
-            default: message = shown_flags[2] ? "SAHITI    PRESENT   " : "SAHITI    NOT MARKED";
+            2'd0:    message = shown_flags[0] ? "NAME1   PRESENT   " : "NAME1   NOT MARKED";
+            2'd1:    message = shown_flags[1] ? "NAME2 PRESENT   " : "NAME2 NOT MARKED";
+            default: message = shown_flags[2] ? "NAME3    PRESENT   " : "NAME3    NOT MARKED";
         endcase
     end
     wire [7:0] character = message[159-character_index*8 -: 8];
