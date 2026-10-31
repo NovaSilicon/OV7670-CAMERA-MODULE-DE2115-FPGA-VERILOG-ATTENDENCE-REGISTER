@@ -1,10 +1,8 @@
 # DE2-115 camera attendance — three people, faces stored permanently (start here)
 
-Open `top_ov7670_vga_detect.qpf` in Quartus Prime Lite 18.1 (target EP4CE115F29C7), **compile it**, and program the new `.sof`. This folder has no `.sof` (older ones belong to older designs).
+Open `top_ov7670_vga_detect.qpf` in Quartus Prime Lite 18.1 (target EP4CE115F29C7), **compile it**, and program the `.sof`. 
 
-## What changed in this version
-
-**Latest update:** (1) **10 samples per person** instead of 5. (2) **Already-marked check:** if a person whose attendance is already marked is recognised again, the box turns **orange** and shows `ALREADY MARKED`; attendance is not marked a second time. Why 10 and not 15: the on-board EEPROM is only 4096 bytes. 15 samples x 3 people x 256 cells does not fit even at 4 bits per cell (5760 bytes). 10 samples x 3 people at 4 bits per cell = 3840 bytes does fit. The templates are therefore kept with 4-bit precision everywhere (matcher RAM and EEPROM), so the system behaves identically before and after a power cycle. **Old EEPROM contents from the previous version are not read** (new image format): enrol everyone once again.
+** (1) **10 samples per person**. (2) **Already-marked check:** if a person whose attendance is already marked is recognised again, the box turns **orange** and shows `ALREADY MARKED`; attendance is not marked a second time. Why 10 and not 15: the on-board EEPROM is only 4096 bytes. 15 samples x 3 people x 256 cells does not fit even at 4 bits per cell (5760 bytes). 10 samples x 3 people at 4 bits per cell = 3840 bytes does fit. The templates are therefore kept with 4-bit precision everywhere (matcher RAM and EEPROM), so the system behaves identically before and after a power cycle. **Old EEPROM contents from the previous version are not read** (new image format): enrol everyone once again.
 
 | Request | Now |
 |---|---|
