@@ -25,7 +25,7 @@ Why it forgot before: the templates lived only in the FPGA's RAM. Anything that 
 | SW[3] | Up = reset attendance and tracker (stored faces are kept). Put it back down. |
 | SW[15:12] | Match threshold = `0x1000 + 0x200 x value` (all down = 0x1000). Up = more permissive. |
 | SW[0] / SW[1] / SW[2] | Greyscale / freeze capture / test pattern (unchanged). |
-| LEDG[0..2] | Attendance latched for ADVAITH, NAVANEETH, SAHITI. [3] new attendance event, [4] matcher result, [5] camera configured, [6] EEPROM busy, [7] LOCKED, [8] enrolling. |
+| LEDG[0..2] | Attendance latched for NAME1, NAME2, NAME3. [3] new attendance event, [4] matcher result, [5] camera configured, [6] EEPROM busy, [7] LOCKED, [8] enrolling. |
 
 ## Enrolling (one time per person)
 
@@ -42,7 +42,7 @@ At every power-up the screen shows `LOADING SAVED FACES` for about half a second
 
 - Label on the box, top-left: `DETECTING` (yellow) -> `<NAME>` + `PRESENT <reg no>` (green, held about 1.5 s) -> `DETECTING`. If the person was already marked: `<NAME>` + `ALREADY MARKED` (orange). `UNKNOWN` (red) = a face-like image that matches nobody. `ENROLLING ...` (cyan), `SAVING ...` / `LOADING ...` (magenta).
 - Bottom left: attendance rows for the three people (PRESENT / NOT MARKED).
-- Bottom right (hex numbers): `SA`, `SN`, `SS` = best score against ADVAITH / NAVANEETH / SAHITI (smaller = closer, `FFFF` = nobody enrolled), `T` = threshold, `C` = contrast of the current crop (needs at least `0A00`), and the EEPROM status (`MEM OK` ...).
+- Bottom right (hex numbers): `SA`, `SN`, `SS` = best score against NAME1 / NAME2 / NAME3 (smaller = closer, `FFFF` = nobody enrolled), `T` = threshold, `C` = contrast of the current crop (needs at least `0A00`), and the EEPROM status (`MEM OK` ...).
 - Bottom row: `A10 N10 S10` = number of stored samples per person.
 
 ## Tuning the threshold (needs the real camera)
