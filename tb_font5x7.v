@@ -41,7 +41,7 @@ module tb_font5x7;
         begin : label_chars
             reg [8*160-1:0] txt;
             integer j;
-            txt = "ENROLLING ADVAITH NAVANEETH DETECTING UNKNOWN PRESENT FACE IN BOX HOLD KEY SAMPLE OF DONE RELEASE 26MVD0050 0123456789 ABCDEF / : V P ALREADY MARKED";
+            txt = "ENROLLING NAME1 NAME2 DETECTING UNKNOWN PRESENT FACE IN BOX HOLD KEY SAMPLE OF DONE RELEASE 26ABC00XX 0123456789 ABCDEF / : V P ALREADY MARKED";
             for (j = 0; j < 160; j = j + 1) begin
                 c = txt[j*8 +: 8]; #1;
                 if (c != 8'h20 && c != 8'h00 && bits === 35'd0) $fatal(1, "Label glyph '%c' is blank", c);
