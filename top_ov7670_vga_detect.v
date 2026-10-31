@@ -101,7 +101,7 @@ module top_ov7670_vga_detect #(
     wire pixel_valid = vga_active && !detector_frame_start &&
                        !scan_x[0] && !scan_y[0];
 
-    // Enrol keys: KEY[1] ADVAITH, KEY[2] NAVANEETH, KEY[3] SAHITI. They only act while
+    // Enrol keys: KEY[1] NAME1, KEY[2] NAME2, KEY[3] NAME3. They only act while
     // SW[17] (enrol enable) is up, so an accidental press cannot touch stored faces.
     reg [1:0] enrol0_sync = 2'b00, enrol1_sync = 2'b00, enrol2_sync = 2'b00, enable_sync = 2'b00;
     always @(posedge vga_clk) begin
