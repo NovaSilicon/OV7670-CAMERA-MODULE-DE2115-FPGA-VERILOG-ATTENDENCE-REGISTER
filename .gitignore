@@ -1,0 +1,17 @@
+# Quartus build output
+db/
+incremental_db/
+output_files/
+simulation/
+*.sof
+*.pof
+*.rpt
+*.summary
+*.qws
+*.bak
+# Icarus / simulation scratch
+*.vvp
+*.ppm
+eeprom_image.hex
+# test logs written next to the sources by run_tests_icarus.*
+/tb_*.log
