@@ -73,9 +73,9 @@ module box_label_overlay #(
         if (mode == 2'd1) begin
             accent = 12'h0F0;
             case (locked_id)
-                2'd0: begin line1 = "ADVAITH V               "; line2 = "PRESENT 26MVD0050       "; end
-                2'd1: begin line1 = "NAVANEETH V P           "; line2 = "PRESENT 26MVD0040       "; end
-                default: begin line1 = "SAHITI                  "; line2 = "PRESENT 26MVD0036       "; end
+                2'd0: begin line1 = "NAME1               "; line2 = "PRESENT 26ABC00XX       "; end
+                2'd1: begin line1 = "NAME2           "; line2 = "PRESENT 26ABC00XX       "; end
+                default: begin line1 = "NAME3                  "; line2 = "PRESENT 26ABC00XX       "; end
             endcase
             if (already) begin
                 accent = 12'hF80;
@@ -85,9 +85,9 @@ module box_label_overlay #(
         if (mode == 2'd2) begin
             accent = 12'h0FF;
             case (enrol_sel)
-                2'd0: line1 = "ENROLLING ADVAITH       ";
-                2'd1: line1 = "ENROLLING NAVANEETH     ";
-                default: line1 = "ENROLLING SAHITI        ";
+                2'd0: line1 = "ENROLLING NAME1       ";
+                2'd1: line1 = "ENROLLING NAME2     ";
+                default: line1 = "ENROLLING NAME3        ";
             endcase
             line2 = {"SAMPLE ", num2(sel_count), " OF 10         "};
             if (sel_count >= 4'd10)
@@ -97,9 +97,9 @@ module box_label_overlay #(
             accent = 12'hF8F;
             if (mem_status == 3'd4) begin
                 case (busy_id)
-                    2'd0: line1 = "SAVING ADVAITH          ";
-                    2'd1: line1 = "SAVING NAVANEETH        ";
-                    default: line1 = "SAVING SAHITI           ";
+                    2'd0: line1 = "SAVING NAME1          ";
+                    2'd1: line1 = "SAVING NAME2        ";
+                    default: line1 = "SAVING NAME3           ";
                 endcase
                 line2 = "DO NOT POWER OFF        ";
             end else begin
